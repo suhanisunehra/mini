@@ -1,0 +1,26 @@
+<!-- login.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <title>Login</title>
+</head>
+<body>
+    <h1>Login</h1>
+    <form method="post" action="{{ url_for('lawyer') }}">
+        <label for="name1">Lawyer_Username:</label>
+        <input type="text" id="name1" name="name1" required>
+
+        <label for="gmail1">Gmail:</label>
+        <input type="email" id="gmail1" name="gmail1" required>
+
+        <label for="pass1">Password:</label>
+        <input type="password" id="pass1" name="pass1" required>
+
+        <input type="submit" value="Login">
+    </form>
+    <p>If you are a new lawyer, please <a href="{{ url_for('l_registration') }}">register</a>.</p>
+</body>
+</html>
