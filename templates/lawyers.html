@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lawyers</title>
+    
+</head>
+<style>
+        html, body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url('background.png');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-color: #0d0149;
+            height: 100vh;
+        }
+        h1, h2, h3, h4, p {
+            color: #fff;
+            text-shadow: 2px 2px 4px #000;
+        }
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        nav ul li {
+            display: inline;
+            margin-right: 10px;
+        }
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            padding: 10px;
+            border-radius: 5px;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+        nav ul li a:hover {
+            background-color: rgba(255, 255, 255, 0.3);
+        }
+        .container, .lawyer-profile {
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+            color: #000;
+            margin-bottom: 20px;
+        }
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: rgba(0, 0, 0, 0.5);
+            color: #fff;
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 5px;
+        }
+    </style>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h2>Welcome, {{ user_details[0] }}</h2>
+        <h3>Your Profile:</h3>
+        <p>Name: {{ user_details[0] }}</p>
+        <p>Email: {{ user_details[1] }}</p>
+        
+        <hr>
+        <h3>Lawyers' Profiles:</h3>
+        {% for lawyer in lawyers_profiles %}
+            <div class="lawyer-profile">
+                <h4>{{ lawyer[0] }}</h4>
+                <p>Email: {{ lawyer[1] }}</p>
+                <p>Phone Number: {{ lawyer[2] }}</p>
+                <p>Specialization: {{ lawyer[3] }}</p>
+                <p>Education: {{ lawyer[4] }}</p>
+                <p>Languages: {{ lawyer[5] }}</p>
+                <p>Location: {{ lawyer[6] }}</p>
+                <p>Bio: {{ lawyer[7] }}</p>
+                
+            </div>
+        {% endfor %}
+    </main>
+    
+</body>
+</html>

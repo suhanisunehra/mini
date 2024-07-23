@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <title>Legal Dashboard</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            text-align: center;
+        }
+        h1 {
+            color: #333;
+        }
+        .features {
+            margin-top: 30px;
+        }
+        .feature {
+            display: inline-block;
+            margin: 0 20px;
+        }
+        .feature img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+        }
+        .feature h3 {
+            margin-top: 10px;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Legal Dashboard</h1>
+        <h1>hello {{username}}</h1>
+        <div class="features">
+            <div class="feature">
+                
+                   <h3><a href="{{ url_for('lawyers', user_id=user_id) }}">Lawyer Contact Portal</a></h3>
+                
+              
+            </div>
+            <div class="feature">
+                <h3><a href="https://9b9149e2083d518a42.gradio.live">Legal Chatbot</a></h3>
+               
+            </div>
+            <div class="feature">
+                
+                     <h3><a href="{{ url_for('ocr') }}">Legal Document Summarization</a>.</h3>
+                   
+              
+            </div>
+        </div>
+    </div>
+</body>
+</html>
